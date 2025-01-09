@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folder-Type Sidebar - Breast Cancer</title>
+    <link rel="icon" href="https://path/to/your/icon.png" />
+    <style>
+      /* General styling */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Sidebar styling */
+      .sidebar {
+        width: 250px;
+        height: 100%;
+        background-color: #2c3e50;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: -250px; /* Hidden initially */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      .sidebar.active {
+        left: 0; /* Slides into view */
+      }
+
+      .sidebar h2 {
+        margin: 0 0 20px;
+        font-size: 1.5em;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 10px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1em;
+        flex-grow: 1;
+        transition: color 0.3s;
+      }
+
+      .sidebar ul li a:hover {
+        color: #ffd700;
+      }
+
+      .sidebar ul li .icon {
+        margin-right: 10px;
+      }
+
+      .sidebar ul li ul {
+        list-style: none;
+        padding-left: 20px;
+        display: none; /* Hidden by default */
+      }
+
+      .sidebar ul li ul li {
+        margin: 5px 0;
+        font-size: 0.9em;
+      }
+
+      .sidebar ul li.expanded ul {
+        display: block; /* Show sub-items */
+      }
+
+      /* Toggle button */
+      .toggle-btn {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        font-size: 1.5em;
+        background: #333;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+
+      .toggle-btn:hover {
+        background-color: #555;
+      }
+
+      /* Main content */
+      .main-container {
+        flex: 1;
+        margin-left: 0; /* Adjust for sidebar visibility */
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZcUKPpsL57m5bIvitBzVE0PAQoTPKPrHhHlTSNsTfbVfN2xckJyJYY_lwnQK6cPn-liI&usqp=CAU");
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 20px;
+        color: white;
+        transition: margin-left 0.3s ease;
+      }
+
+      .main-container.active {
+        margin-left: 250px; /* Adjust margin when sidebar is visible */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><span class="icon">📁</span><a href="#">Home</a></li>
+        <li class="folder">
+          <span class="icon">📂</span> Analysis
+          <ul>
+            <li><span class="icon">📄</span><a href="#">Data Overview</a></li>
+            <li><span class="icon">📄</span><a href="#">Visualizations</a></li>
+          </ul>
+        </li>
+        <li class="folder">
+          <span class="icon">📂</span> About
+          <ul>
+            <li><span class="icon">📄</span><a href="#">Team</a></li>
+            <li><span class="icon">📄</span><a href="#">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+
+    <!-- Main Content -->
+    <div class="main-container" id="main-container">
+      <div class="content">
+        <h1>🌸 Breast Cancer Analysis 🌸</h1>
+        <p>
+          Welcome to the Breast Cancer Analysis page. This layout features a
+          dynamic sidebar styled like a folder structure.
+        </p>
+      </div>
+    </div>
+
+    <!-- JavaScript for Sidebar and Folder Toggle -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const mainContainer = document.getElementById("main-container");
+      const toggleBtn = document.getElementById("toggle-btn");
+      const folders = document.querySelectorAll(".folder");
+
+      // Toggle sidebar
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        mainContainer.classList.toggle("active");
+      });
+
+      // Toggle folders
+      folders.forEach((folder) => {
+        folder.addEventListener("click", () => {
+          folder.classList.toggle("expanded");
+        });
+      });
+    </script>
+  </body>
+</html>

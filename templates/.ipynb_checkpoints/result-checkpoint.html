@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Result</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detection Result</h1>
+    
+    <h2>Images:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Original Image</th>
+                <th>Processed Image</th>
+                <th>Tumor Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Original Image" style="width:400px; height:400px;">
+                </td>
+                <td>
+                    <img src="{{ processed_image_path }}" alt="Processed Image" style="width:400px; height:400px;">
+                </td>
+                <td>
+                    {% if tumor_images %}
+                        <img src="{{ tumor_images[0] }}" alt="Tumor Image" style="width:200px; height:200px;">
+                    {% else %}
+                        No tumor image available
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    {% if tumor_images | length > 1 %}
+        <h2>Additional Tumor Images:</h2>
+        {% for url in tumor_images[1:] %}
+            {% if url %}
+                <img src="{{ url }}" alt="Tumor Image" style="width:100px; height:100px;">
+            {% else %}
+                No image available
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    
+    <h2>Tumor Details:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Detail</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detail in tumor_details %}
+            <tr>
+                <td>Size (cm)</td>
+                <td>{{ detail.size_cm }}</td>
+            </tr>
+            <tr>
+                <td>Stage</td>
+                <td>{{ detail.stage }}</td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td>{{ detail.grade_name }}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{ detail.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br/>
+    <a href="{{ url_for('index') }}">Upload another image</a>
+</body>
+</html>

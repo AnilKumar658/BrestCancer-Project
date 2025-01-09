@@ -1,0 +1,182 @@
+/* General Body Styling */
+body {
+  font-family: auto;
+  background-color: #e9ecef;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Video Styling */
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the whole background */
+  z-index: -1; /* Make sure the video stays in the background */
+}
+
+/* Header Styling */
+header {
+  position: fixed;
+  top: 0;
+  left: 100rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px; /* Semi-transparent background */
+  color: rgb(255 76 76);
+  z-index: 1000;
+}
+
+header .logo img {
+  width: 80px;
+  height: auto;
+}
+
+header h1 {
+  font-size: 60px;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  margin-left: -70px;
+  margin-top: 30px;
+}
+
+/* Container Styling */
+.container {
+  background-color: #f0eeeed6;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 40px;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.container p {
+  color: #6c757d;
+  font-size: 16px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input[type="file"] {
+  margin-bottom: 24px;
+  padding: 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+form input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+form input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form input[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+form input[type="submit"]:active {
+  background-color: #1e7e34;
+  transform: translateY(0);
+}
+
+/* Footer Styling */
+.footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer a {
+  color: white;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.footer a:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.footer a:active {
+  background-color: #004494;
+  transform: translateY(0);
+}
+
+/* Copyright Styling */
+.copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Apply CoFo Sans font to the entire body */
+body {
+  font-family: "CoFo Sans", sans-serif;
+}
+
+/* Example for header */
+header {
+  font-family: serif;
+  font-size: large;
+}
+
+/* Apply CoFo Sans to other elements */
+.container {
+  font-family: serif;
+}
+
+footer {
+  font-family: "CoFo Sans", sans-serif;
+}

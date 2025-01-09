@@ -1,0 +1,30 @@
+ProjectFolder/
+    app.py
+    brain_tumor.h5
+    model metrics.ipynb
+    model_evaluation_report.pdf
+    project.ipynb
+    requirements.txt
+    tumor_detection_log.csv
+    static/
+      .ipynb_checkpoints/
+      css/
+        index.css
+        report.css
+        images/
+          ai_brain_tumor.jpg
+          brain tumor.jpg
+          brain-2750415.svg
+          icons8-brain-100.png
+          Neurology.jpg
+      uploads/
+        (Many image files, cropped and processed)
+      videos/
+        neurology-background.mp4
+    templates/
+      index.html
+      report.html
+      result.html
+      .ipynb_checkpoints/
+        index-checkpoint.html
+        result-checkpoint.html

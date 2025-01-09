@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Detection Project</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/report.css') }}"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common.css') }}"
+    />
+    <style>
+        body{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZcUKPpsL57m5bIvitBzVE0PAQoTPKPrHhHlTSNsTfbVfN2xckJyJYY_lwnQK6cPn-liI&usqp=CAU");
+        }
+        div.container{
+            max-width:1300px;
+            margin-left: 410px;
+            text-align: justify;
+        }
+        #nav-bar {
+             height: calc(139% - 2vw);
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div id="nav-bar">
+      <input id="nav-toggle" type="checkbox" />
+      <div id="nav-header">
+        <a id="nav-title" href="https://github.com" target="_blank">
+          Brain Tumor Project <i class="fas fa-brain"></i>
+        </a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr />
+      </div>
+      <div id="nav-content">
+        <div class="nav-button">
+            <a href="{{ url_for('index')}}"
+              ><i class="fas fa-home"></i><span>Home</span></a
+            >
+          </div>
+        <div class="nav-button">
+          <a href="{{ url_for('Report') }}"
+            ><i class="fas fa-palette"></i><span>Project Overview</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('dataCollect')}}"
+            ><i class="fas fa-dna"></i><span>Data Collection</span></a
+          >
+        </div>
+        <hr />
+        <div class="nav-button">
+          <a href="{{ url_for('ModelDevelop') }}"
+            ><i class="fas fa-chart-line"></i><span>Model Development</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('Home') }}"
+            ><i class="fas fa-cogs"></i><span>Implementation</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('view_pdf') }}"
+            ><i class="fas fa-analytics"></i><span>Analysis & Results</span></a
+          >
+        </div>
+        <div class="nav-button">
+            <a href="{{ url_for('contact') }}">
+              <i class="fas fa-envelope"></i><span>Contact</span>
+            </a>
+          </div>
+        <hr />
+        <div class="nav-button">
+          <a href="#team"><i class="fas fa-users"></i><span>Team</span></a>
+        </div>
+        <div id="nav-content-highlight"></div>
+      </div>
+      <input id="nav-footer-toggle" type="checkbox" />
+      <div id="nav-footer">
+        <div id="nav-footer-heading">
+          <div id="nav-footer-titlebox">
+            <a
+              id="nav-footer-title"
+              href="https://github.com/your-profile"
+              target="_blank"
+              >VBIT</a
+            ><span id="nav-footer-subtitle">Project Lead</span>
+          </div>
+          <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+        </div>
+        <div id="nav-footer-content">
+          <p>Brain Tumor Detection Project using Deep Learning</p>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+    <div class="container">
+        <h1>Brain Tumor Detection Project</h1>
+    
+        <h2>Data Collection 📂</h2>
+        <p>The dataset for this project consists of MRI (Magnetic Resonance Imaging) scans 🧠🖼️, sourced from publicly available medical datasets like the <strong>Brain MRI Images for Brain Tumor Detection</strong> dataset. These scans are labeled as 'normal' (healthy) or 'tumor' (abnormal), which allows the model to learn to differentiate between healthy and tumorous tissue.</p>
+    
+        <h3>Dataset Sourcing 🌍</h3>
+        <p>Data is collected from reputable sources such as:</p>
+        <ul>
+            <li><strong>Kaggle</strong></li>
+            <li><strong>Public Medical Databases</strong> (e.g., TCIA, MRI Brain Tumor Dataset)</li>
+            <li><strong>Clinical Collaborations</strong></li>
+        </ul>
+    
+        <h3>Data Labeling 🏷️</h3>
+        <p>Each image is labeled as either 'normal' or 'tumor' by medical professionals to ensure accurate training of the model.</p>
+    
+        <h3>Data Preprocessing 🔧</h3>
+        <p>The images are preprocessed through:</p>
+        <ul>
+            <li><strong>Resizing 📏:</strong> Standardized dimensions for consistency.</li>
+            <li><strong>Normalization 🔢:</strong> Pixel values are scaled to a range of 0-1.</li>
+            <li><strong>Augmentation 🔄:</strong> Techniques like rotation and flipping to increase dataset diversity.</li>
+        </ul>
+    
+        <h3>Data Splitting 📊</h3>
+        <p>The dataset is divided into three sets: training, validation, and testing to ensure the model generalizes well.</p>
+    
+        <h3>Storage and Privacy 💾</h3>
+        <p>The MRI images are stored securely in cloud storage or databases, ensuring patient data privacy and compliance with regulations.</p>
+    
+        <h3>Challenges ⚖️</h3>
+        <ul>
+            <li><strong>Data Imbalance:</strong> Some tumor types may be underrepresented in the dataset.</li>
+            <li><strong>Data Privacy:</strong> Strict adherence to privacy laws (e.g., HIPAA).</li>
+        </ul>
+    
+        <h3>Conclusion 🏁</h3>
+        <p>Effective data collection is essential for training deep learning models. By using high-quality, annotated data, the project aims to create an accurate brain tumor detection system based on MRI scans.</p>
+    </div>
+       
+    </div>
+  </body>
+</html>

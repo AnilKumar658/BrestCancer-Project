@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Detection Project</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/report.css') }}"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common.css') }}"
+    />
+    <style>
+        body{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZcUKPpsL57m5bIvitBzVE0PAQoTPKPrHhHlTSNsTfbVfN2xckJyJYY_lwnQK6cPn-liI&usqp=CAU");
+        }
+        div.container{
+            max-width:1300px;
+            margin-left: 410px;
+            text-align: justify;
+        }
+        #nav-bar {
+             height: calc(178% - 2vw);
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div id="nav-bar">
+      <input id="nav-toggle" type="checkbox" />
+      <div id="nav-header">
+        <a id="nav-title" href="https://github.com" target="_blank">
+          Brain Tumor Project <i class="fas fa-brain"></i>
+        </a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr />
+      </div>
+      <div id="nav-content">
+        <div class="nav-button">
+            <a href="{{ url_for('index')}}"
+              ><i class="fas fa-home"></i><span>Home</span></a
+            >
+          </div>
+        <div class="nav-button">
+          <a href="{{ url_for('Report') }}"
+            ><i class="fas fa-palette"></i><span>Project Overview</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('dataCollect')}}"
+            ><i class="fas fa-dna"></i><span>Data Collection</span></a
+          >
+        </div>
+        <hr />
+        <div class="nav-button">
+          <a href="{{ url_for('ModelDevelop') }}"
+            ><i class="fas fa-chart-line"></i><span>Model Development</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('Home') }}"
+            ><i class="fas fa-cogs"></i><span>Implementation</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('view_pdf') }}"
+            ><i class="fas fa-analytics"></i><span>Analysis & Results</span></a
+          >
+        </div>
+        <div class="nav-button">
+            <a href="{{ url_for('contact') }}">
+              <i class="fas fa-envelope"></i><span>Contact</span>
+            </a>
+          </div>
+        <hr />
+        <div class="nav-button">
+          <a href="#team"><i class="fas fa-users"></i><span>Team</span></a>
+        </div>
+        <div id="nav-content-highlight"></div>
+      </div>
+      <input id="nav-footer-toggle" type="checkbox" />
+      <div id="nav-footer">
+        <div id="nav-footer-heading">
+          <div id="nav-footer-titlebox">
+            <a
+              id="nav-footer-title"
+              href="https://github.com/your-profile"
+              target="_blank"
+              >VBIT</a
+            ><span id="nav-footer-subtitle">Project Lead</span>
+          </div>
+          <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+        </div>
+        <div id="nav-footer-content">
+          <p>Brain Tumor Detection Project using Deep Learning</p>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+    <div class="container">
+        <h1>Brain Tumor Detection Project</h1>
+    
+        <h2>Model Development 🧑‍💻</h2>
+        <p>In this section, we will discuss the development of the machine learning model used for brain tumor detection. The goal is to build a model that can accurately classify MRI images as either 'normal' or 'tumor' based on features learned from the data. We use deep learning and transformer algorithms to achieve this task.</p>
+    
+        <h3>Step 1: Choosing the Right Model 🤖</h3>
+        <p>We utilize Convolutional Neural Networks (CNNs), which are highly effective for image classification tasks like this. CNNs automatically learn spatial hierarchies of features from the images, making them ideal for detecting patterns in MRI scans. Additionally, transformer-based models (e.g., Vision Transformers, ViT) are considered for capturing long-range dependencies in images.</p>
+    
+        <h3>Step 2: Model Architecture 🏗️</h3>
+        <p>The model architecture consists of several layers:</p>
+        <ul>
+            <li><strong>Input Layer:</strong> Takes in preprocessed MRI images (e.g., 224x224 pixels).</li>
+            <li><strong>Convolutional Layers:</strong> Extracts features such as edges, textures, and regions of interest in the brain scans.</li>
+            <li><strong>Pooling Layers:</strong> Reduces the spatial dimensions while retaining essential information, improving computation efficiency.</li>
+            <li><strong>Fully Connected Layers:</strong> After feature extraction, these layers perform classification by mapping features to 'normal' or 'tumor' labels.</li>
+        </ul>
+    
+        <h3>Step 3: Transfer Learning 🔄</h3>
+        <p>For improved performance, we use pre-trained models such as <strong>ResNet50</strong> or <strong>VGG16</strong>, which have already been trained on large image datasets like ImageNet. This allows the model to benefit from the knowledge gained from previous tasks, reducing training time and improving accuracy. Fine-tuning the pre-trained model helps adapt it to the specific task of brain tumor detection.</p>
+    
+        <h3>Step 4: Model Training ⚙️</h3>
+        <p>During training, the model learns to classify MRI images by adjusting its weights through backpropagation. The training process involves:</p>
+        <ul>
+            <li><strong>Loss Function:</strong> We use binary cross-entropy loss since this is a binary classification problem (normal vs. tumor).</li>
+            <li><strong>Optimizer:</strong> Adam optimizer is used to minimize the loss function efficiently.</li>
+            <li><strong>Epochs:</strong> The model is trained over multiple epochs to ensure it learns the patterns in the data effectively without overfitting.</li>
+        </ul>
+    
+        <h3>Step 5: Model Evaluation 📈</h3>
+        <p>After training, the model's performance is evaluated using the test set. Key evaluation metrics include:</p>
+        <ul>
+            <li><strong>Accuracy:</strong> The percentage of correct classifications.</li>
+            <li><strong>Precision and Recall:</strong> Measures the model's ability to correctly identify tumors and minimize false positives/negatives.</li>
+            <li><strong>F1-Score:</strong> The harmonic mean of precision and recall, providing a balance between the two metrics.</li>
+        </ul>
+    
+        <h3>Step 6: Model Tuning and Hyperparameter Optimization 🔧</h3>
+        <p>To optimize the model, we perform hyperparameter tuning. This involves adjusting parameters like the learning rate, batch size, and number of layers. Techniques such as grid search or random search can be used to find the best combination of hyperparameters that result in the highest model performance.</p>
+    
+        <h3>Step 7: Model Deployment 🚀</h3>
+        <p>Once the model achieves satisfactory accuracy, it is deployed for real-time predictions. This involves integrating the model into an application or web service where new MRI images can be uploaded, and the model will predict whether they contain a tumor or not. Technologies such as Flask or FastAPI can be used for building the deployment pipeline.</p>
+    
+        <h3>Conclusion 🏁</h3>
+        <p>The model development process involves selecting the right architecture, training with labeled data, fine-tuning pre-trained models, and evaluating performance. With continuous optimization and deployment, this model can assist medical professionals in diagnosing brain tumors from MRI scans with high accuracy.</p>
+    </div>
+    
+       
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Detection Project</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/report.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/common.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div id="nav-bar">
+      <input id="nav-toggle" type="checkbox" />
+      <div id="nav-header">
+        <a id="nav-title" href="https://github.com" target="_blank">
+          Brain Tumor Project <i class="fas fa-brain"></i>
+        </a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr />
+      </div>
+      <div id="nav-content">
+        <div class="nav-button">
+          <a href="{{ url_for('index')}}"
+            ><i class="fas fa-home"></i><span>Home</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('Report') }}"
+            ><i class="fas fa-palette"></i><span>Project Overview</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('dataCollect')}}"
+            ><i class="fas fa-dna"></i><span>Data Collection</span></a
+          >
+        </div>
+        <hr />
+        <div class="nav-button">
+          <a href="{{ url_for('ModelDevelop') }}"
+            ><i class="fas fa-chart-line"></i><span>Model Development</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('Home') }}"
+            ><i class="fas fa-cogs"></i><span>Implementation</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('view_pdf') }}"
+            ><i class="fas fa-analytics"></i><span>Analysis & Results</span></a
+          >
+        </div>
+        <div class="nav-button">
+          <a href="{{ url_for('contact') }}">
+            <i class="fas fa-envelope"></i><span>Contact</span>
+          </a>
+        </div>
+        <hr />
+        <div class="nav-button">
+          <a href="#team"><i class="fas fa-users"></i><span>Team</span></a>
+        </div>
+        <div id="nav-content-highlight"></div>
+      </div>
+      <input id="nav-footer-toggle" type="checkbox" />
+      <div id="nav-footer">
+        <div id="nav-footer-heading">
+          <div id="nav-footer-titlebox">
+            <a
+              id="nav-footer-title"
+              href="https://github.com/your-profile"
+              target="_blank"
+              >VBIT</a
+            ><span id="nav-footer-subtitle">Project Lead</span>
+          </div>
+          <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+        </div>
+        <div id="nav-footer-content">
+          <p>Brain Tumor Detection Project using Deep Learning</p>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+    <div class="container">
+      <h1>Brain Tumor Detection Project</h1>
+      <div class="section">
+        <h2>Project Overview</h2>
+        <p>
+          This project focuses on detecting brain tumors from MRI images using
+          advanced deep learning techniques and image processing methods. Our
+          goal is to provide a reliable and efficient system for early detection
+          of brain tumors, which is crucial for timely medical intervention.
+        </p>
+      </div>
+      <div class="section">
+        <h2>Methodology</h2>
+        <p>
+          The project employs Convolutional Neural Networks (CNNs) to classify
+          MRI images into different categories: glioma, meningioma, notumor, and
+          pituitary. The methodology includes data preprocessing, model
+          training, and performance evaluation. We utilize a dataset of labeled
+          MRI images for training and validation.
+        </p>
+      </div>
+      <div class="section">
+        <h2>Results</h2>
+        <p>
+          The results of our project demonstrate high accuracy in classifying
+          MRI images. The trained model shows promising performance metrics,
+          including precision, recall, and F1-score. Detailed analysis of the
+          results and comparisons with existing methods are provided in the full
+          report.
+        </p>
+      </div>
+      <div class="section">
+        <h2>Contact</h2>
+        <p>
+          For more information about this project or to get in touch, please
+          contact us at
+          <a href="mailto:your.email@example.com" class="cta-button">Email Us</a
+          >.
+        </p>
+        <p><a href="/" class="home-button">Home</a></p>
+      </div>
+    </div>
+  </body>
+</html>
