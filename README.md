@@ -1,59 +1,83 @@
-Brain Tumor Detection Project
-Overview
-This project focuses on the detection of brain tumors using machine learning and deep learning techniques. It includes scripts, pre-trained models, processed datasets, and a web interface for interacting with the model.
+# Brain Tumor Detection System 🧠💻
 
-Folder Structure
-ProjectFolder/
-app.py: Main Flask application script for running the web interface.
-brain_tumor.h5: Pre-trained deep learning model for brain tumor classification.
-model metrics.ipynb: Jupyter notebook analyzing model performance and metrics.
-model_evaluation_report.pdf: Detailed report evaluating the model's accuracy, precision, recall, etc.
-project.ipynb: Jupyter notebook containing the main workflow, including data preprocessing, training, and evaluation.
-requirements.txt: Lists Python dependencies required to run the project.
-tumor_detection_log.csv: Logs of predictions made by the model, useful for auditing and debugging.
-static/
-Contains static assets for the web application.
+This repository contains the implementation of a Brain Tumor Detection System that uses deep learning and image processing techniques. The system leverages a hybrid approach combining Convolutional Neural Networks (CNNs) and Transformers to classify and evaluate brain tumors based on Magnetic Resonance Imaging (MRI).
 
-css/
-index.css: Stylesheet for the homepage.
-report.css: Stylesheet for the report page.
-images/
-Contains images used in the web interface, such as:
-ai_brain_tumor.jpg: Illustration of AI in brain tumor detection.
-brain tumor.jpg: Sample brain tumor MRI image.
-icons8-brain-100.png: Brain icon for UI elements.
-uploads/
-Contains user-uploaded MRI images for tumor detection.
-Includes raw, cropped, and processed versions of the MRI scans.
-videos/
-neurology-background.mp4: Background video for the web interface.
-templates/
-HTML templates for rendering the web application’s pages.
+# Features ✨
 
-index.html: Homepage of the application.
-report.html: Detailed report page for the results.
-result.html: Page displaying the tumor detection results.
-.ipynb_checkpoints/
-Temporary checkpoints for HTML templates created during development.
-How to Run the Project
-Install Dependencies:
+Deep Learning Models: Pretrained models (stored as .h5 files) for accurate tumor detection.
 
-Copy code
+Interactive Web Application: A Streamlit-based app for user interaction.
+
+Model Evaluation: Detailed metrics and evaluation reports.
+
+Hybrid Architecture: Combines CNNs and Transformers for enhanced performance.
+
+# File Structure 📁
+
+app.py: Main script to run the web application.
+
+barin_tumor.h5 and Brain-Tumor-Classification.h5: Pretrained deep learning models.
+
+brain_tumor.pkl: Serialized model or pipeline file.
+
+model metrics.ipynb: Jupyter notebook for analyzing model performance metrics.
+
+model_evaluation_report.pdf and model_evaluation_report1.pdf: Model evaluation reports in PDF format.
+
+project.ipynb: Jupyter notebook containing the main project development workflow.
+
+static/: Directory containing static assets like CSS, images, and JavaScript files.
+
+templates/: Directory containing HTML templates for the web application.
+
+__pycache__/: Directory containing compiled Python files.
+
+# Installation 🛠️
+
+Clone the repository:
+
+git clone https://github.com/anilkumar658/brain-tumor-detection.git
+cd brain-tumor-detection/segmentation
+
+Create a virtual environment:
+
+python -m venv env
+source env/bin/activate  # On Windows: .\env\Scripts\activate
+
+Install dependencies:
+
 pip install -r requirements.txt
-Run the Application:
 
-Copy code
+Download the pretrained models and place them in the root directory.
+
+# Usage 🚀
+
+To run the web application:
+
 python app.py
-Access the Web Interface: Open http://127.0.0.1:5000 in your web browser.
 
-Key Features
-Brain Tumor Detection: Upload MRI scans and get predictions on tumor type.
-Interactive Interface: User-friendly web application for seamless interaction.
-Detailed Reporting: Generate and view evaluation reports of the predictions.
-Requirements
-Python 3.10+
-Flask
-TensorFlow/Keras
-Jupyter Notebook (optional, for experimentation)
-Acknowledgements
-This project leverages state-of-the-art deep learning techniques for medical imaging. Special thanks to open-source contributors and datasets used during development.
+The application will start, and you can interact with it via your browser at http://localhost:8501/.
+
+# Model Evaluation 📊
+
+Model performance is documented in model_evaluation_report.pdf and model_evaluation_report1.pdf.
+
+Metrics and visualizations can be explored in model metrics.ipynb.
+
+# Requirements 📋
+
+Ensure you have the following installed:
+
+Python 3.8+
+TensorFlow
+Streamlit
+Contribution 🤝
+Feel free to submit issues or pull requests to improve the system.
+
+# License 📜
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+# Acknowledgments 🙏
+
+This project is a part of the final year research work titled "Brain Tumor Detection System From Magnetic Resonance Imaging Using Deep Learning Techniques And Image Processing."
